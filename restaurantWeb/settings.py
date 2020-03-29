@@ -25,7 +25,7 @@ SECRET_KEY = 'hs9=i!f@v47c_@x=m#bl68kd_w#+p0jwh+-h=^$2eeiul6wphn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['yhanl.tech', '35.189.16.33']
 
 
 # Application definition
