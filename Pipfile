@@ -28,6 +28,7 @@ stripe = "==2.27.0"
 urllib3 = "==1.24.2"
 Django = "==2.2.10"
 Pillow = "==6.2.0"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
