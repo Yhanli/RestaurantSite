@@ -1,3 +1,5 @@
-/media_root/
+/media_root/*
 /.idea/
 /restaurantWeb/__pycache__/
+/website/migrations/
+/website/__pycache__/
