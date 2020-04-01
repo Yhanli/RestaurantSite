@@ -5,8 +5,9 @@ from .models import MainPage
 
 
 def main_page(request):
+    activePage = MainPage.objects.get(is_active=True)
 
     context = {
-        'backgroundImg':'https://cdn.cnn.com/cnnnext/dam/assets/200319114749-lake-wanaka-tree-full-169.jpg'
+        'obj':activePage
     }
     return render(request, "home-page.html", context)

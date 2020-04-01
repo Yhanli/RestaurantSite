@@ -2,8 +2,8 @@
     <div class="container">
 
         <!-- Brand -->
-        <a class="navbar-brand" href="#">
-            <img src="http://placehold.it/150x50?text=Logo" alt="">
+        <a class="navbar-brand img-fluid" href="#">
+            <img src="{{ obj.logoImg.url }}" max-width="10%" height="auto" alt="">
         </a>
 
         <!-- Collapse -->
@@ -11,59 +11,35 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <!-- Links -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
             <!-- Left -->
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link waves-effect" href="#">Home
+                <li class="nav-item active bg-info">
+                    <a class="nav-link waves-effect waves-teal" href="/">Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About
-                        MDB</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect"
-                       href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-                       target="_blank">Free download</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/"
-                       target="_blank">Free
-                        tutorials</a>
+                    <a class="nav-link waves-effect" href="#" target="_blank">Menu</a>
                 </li>
             </ul>
-
             <!-- Right -->
             <ul class="navbar-nav nav-flex-icons">
-                <li class="nav-item">
-                    <a class="nav-link waves-effect">
-                        <span class="badge red z-depth-1 mr-1"> 1 </span>
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="clearfix d-none d-sm-inline-block"> Cart </span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://github.com/mdbootstrap/bootstrap-material-design"
-                       class="nav-link border border-light rounded waves-effect"
-                       target="_blank">
-                        <i class="fab fa-github mr-2"></i>MDB GitHub
-                    </a>
-                </li>
+                {% if obj.facebookLink %}
+                    <li class="nav-item">
+                        <a href="{{ obj.facebookLink }}" class="nav-link waves-effect" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if obj.twitterLink %}
+                    <li class="nav-item">
+                        <a href="{{ obj.twitterLink }}" class="nav-link waves-effect" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                {% endif %}
             </ul>
 
         </div>

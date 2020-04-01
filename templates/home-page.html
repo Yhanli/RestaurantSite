@@ -1,608 +1,117 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <style>
+        .carousel-item .item {
+            height: 500px;
+        }
+        .item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 300px;
+        }
+    .working-hour .bg {
+        opacity: 0.5;
+    }
+    </style>
+
     <div id="carousel-example-1z" class="carousel slide carousel-fade pt-4" data-ride="carousel">
-
-        <!--Indicators-->
         <ol class="carousel-indicators">
-            <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-            <li data-target="#carousel-example-1z" data-slide-to="2"></li>
         </ol>
-        <!--/.Indicators-->
-
-        <!--Slides-->
         <div class="carousel-inner" role="listbox">
-
-            <!--First slide-->
             <div class="carousel-item active">
                 <div class="view"
-                     style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/8-col/img%282%29.jpg'); background-repeat: no-repeat; background-size: cover;">
-
-                    <!-- Mask & flexbox options-->
+                     style="background-image: url('{{ obj.backgroundImg.url }}'); background-repeat: no-repeat; background-size: cover;">
                     <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
-
-                        <!-- Content -->
-                        <div class="text-center white-text mx-5 wow fadeIn">
+                        <div class="text-center white-text mx-5 wow float-lg-left">
                             <h1 class="mb-4">
-                                <strong>Learn Bootstrap 4 with MDB</strong>
+                                <strong>{{ obj.restaurantEngName}}</strong>
                             </h1>
-
                             <p>
-                                <strong>Best & free guide of responsive web design</strong>
+                                <strong>{{ obj.restaurantSubNameOrTheme}}</strong>
                             </p>
-
-                            <p class="mb-4 d-none d-md-block">
-                                <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users.
-                                    Video and
-                                    written versions
-                                    available. Create your own, stunning website.</strong>
-                            </p>
-
                             <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/"
-                               class="btn btn-outline-white btn-lg">Start
-                                free tutorial
-                                <i class="fas fa-graduation-cap ml-2"></i>
+                               class="btn btn-outline-white btn-lg">
+                                <i class="fas fa-bars ml-2"> Check out our menu!</i>
                             </a>
                         </div>
-                        <!-- Content -->
-
                     </div>
-                    <!-- Mask & flexbox options-->
-
                 </div>
             </div>
-            <!--/First slide-->
-
-            <!--Second slide-->
-            <div class="carousel-item">
-                <div class="view"
-                     style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/8-col/img%283%29.jpg'); background-repeat: no-repeat; background-size: cover;">
-
-                    <!-- Mask & flexbox options-->
-                    <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
-
-                        <!-- Content -->
-                        <div class="text-center white-text mx-5 wow fadeIn">
-                            <h1 class="mb-4">
-                                <strong>Learn Bootstrap 4 with MDB</strong>
-                            </h1>
-
-                            <p>
-                                <strong>Best & free guide of responsive web design</strong>
-                            </p>
-
-                            <p class="mb-4 d-none d-md-block">
-                                <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users.
-                                    Video and
-                                    written versions
-                                    available. Create your own, stunning website.</strong>
-                            </p>
-
-                            <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/"
-                               class="btn btn-outline-white btn-lg">Start
-                                free tutorial
-                                <i class="fas fa-graduation-cap ml-2"></i>
-                            </a>
-                        </div>
-                        <!-- Content -->
-
-                    </div>
-                    <!-- Mask & flexbox options-->
-
-                </div>
-            </div>
-            <!--/Second slide-->
-
-            <!--Third slide-->
-            <div class="carousel-item">
-                <div class="view"
-                     style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/8-col/img%285%29.jpg'); background-repeat: no-repeat; background-size: cover;">
-
-                    <!-- Mask & flexbox options-->
-                    <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
-
-                        <!-- Content -->
-                        <div class="text-center white-text mx-5 wow fadeIn">
-                            <h1 class="mb-4">
-                                <strong>Learn Bootstrap 4 with MDB</strong>
-                            </h1>
-
-                            <p>
-                                <strong>Best & free guide of responsive web design</strong>
-                            </p>
-
-                            <p class="mb-4 d-none d-md-block">
-                                <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users.
-                                    Video and
-                                    written versions
-                                    available. Create your own, stunning website.</strong>
-                            </p>
-
-                            <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/"
-                               class="btn btn-outline-white btn-lg">Start
-                                free tutorial
-                                <i class="fas fa-graduation-cap ml-2"></i>
-                            </a>
-                        </div>
-                        <!-- Content -->
-
-                    </div>
-                    <!-- Mask & flexbox options-->
-
-                </div>
-            </div>
-            <!--/Third slide-->
-
         </div>
-        <!--/.Slides-->
-
-        <!--Controls-->
-        <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-        <!--/.Controls-->
-
     </div>
-    <!--/.Carousel Wrapper-->
-
-    <!--Main layout-->
-    <main>
+    <div class="banner-bottom-bar">
         <div class="container">
-
-            <!--Navbar-->
-            <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5">
-
-                <!-- Navbar brand -->
-                <span class="navbar-brand">Categories:</span>
-
-                <!-- Collapse button -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-                        aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Collapsible content -->
-                <div class="collapse navbar-collapse" id="basicExampleNav">
-
-                    <!-- Links -->
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">All
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Shirts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Sport wears</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Outwears</a>
-                        </li>
-
-                    </ul>
-                    <!-- Links -->
-
-                    <form class="form-inline">
-                        <div class="md-form my-0">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                        </div>
-                    </form>
+            <div class="d-flex justify-content-between">
+                <div >
+                    <div id="sr-res-root" class="btn">
+                        <a href="tel:{{ obj.contactNumber }}">Book A Table</a></div>
                 </div>
-                <!-- Collapsible content -->
-
-            </nav>
-            <!--/.Navbar-->
-
-            <!--Section: Products v.3-->
-            <section class="text-center mb-4">
-
-                <!--Grid row-->
-                <div class="row wow fadeIn">
-
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4">
-
-                        <!--Card-->
-                        <div class="card">
-
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg"
-                                     class="card-img-top"
-                                     alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-
-                            <!--Card content-->
-                            <div class="card-body text-center">
-                                <!--Category & Title-->
-                                <a href="" class="grey-text">
-                                    <h5>Shirt</h5>
-                                </a>
-                                <h5>
-                                    <strong>
-                                        <a href="" class="dark-grey-text">Denim shirt
-                                            <span class="badge badge-pill danger-color">NEW</span>
-                                        </a>
-                                    </strong>
-                                </h5>
-
-                                <h4 class="font-weight-bold blue-text">
-                                    <strong>120$</strong>
-                                </h4>
-
-                            </div>
-                            <!--Card content-->
-
-                        </div>
-                        <!--Card-->
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4">
-
-                        <!--Card-->
-                        <div class="card">
-
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13.jpg"
-                                     class="card-img-top"
-                                     alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-
-                            <!--Card content-->
-                            <div class="card-body text-center">
-                                <!--Category & Title-->
-                                <a href="" class="grey-text">
-                                    <h5>Sport wear</h5>
-                                </a>
-                                <h5>
-                                    <strong>
-                                        <a href="" class="dark-grey-text">Sweatshirt</a>
-                                    </strong>
-                                </h5>
-
-                                <h4 class="font-weight-bold blue-text">
-                                    <strong>139$</strong>
-                                </h4>
-
-                            </div>
-                            <!--Card content-->
-
-                        </div>
-                        <!--Card-->
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4">
-
-                        <!--Card-->
-                        <div class="card">
-
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg"
-                                     class="card-img-top"
-                                     alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-
-                            <!--Card content-->
-                            <div class="card-body text-center">
-                                <!--Category & Title-->
-                                <a href="" class="grey-text">
-                                    <h5>Sport wear</h5>
-                                </a>
-                                <h5>
-                                    <strong>
-                                        <a href="" class="dark-grey-text">Grey blouse
-                                            <span class="badge badge-pill primary-color">bestseller</span>
-                                        </a>
-                                    </strong>
-                                </h5>
-
-                                <h4 class="font-weight-bold blue-text">
-                                    <strong>99$</strong>
-                                </h4>
-
-                            </div>
-                            <!--Card content-->
-
-                        </div>
-                        <!--Card-->
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Fourth column-->
-                    <div class="col-lg-3 col-md-6 mb-4">
-
-                        <!--Card-->
-                        <div class="card">
-
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15.jpg"
-                                     class="card-img-top"
-                                     alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-
-                            <!--Card content-->
-                            <div class="card-body text-center">
-                                <!--Category & Title-->
-                                <a href="" class="grey-text">
-                                    <h5>Outwear</h5>
-                                </a>
-                                <h5>
-                                    <strong>
-                                        <a href="" class="dark-grey-text">Black jacket</a>
-                                    </strong>
-                                </h5>
-
-                                <h4 class="font-weight-bold blue-text">
-                                    <strong>219$</strong>
-                                </h4>
-
-                            </div>
-                            <!--Card content-->
-
-                        </div>
-                        <!--Card-->
-
-                    </div>
-                    <!--Fourth column-->
-
+                <div>
+                    {% if obj.contactNumber %}
+                        <a href="tel:{{obj.contactNumber}}" class="phone">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M36.6 48C31.8 48 24 45.9 14 36.1L13.9 36C0.499994 22.2 1.49999 12.7 2.59999 9.30001C3.59999 6.10001 6.19999 3.70001 10.1 2.20001C11.7 1.60001 13.4 2.20001 14.3 3.70001L19 11.5C19.9 12.9 19.6 14.7 18.4 15.9L15 19C14.4 19.6 14.2 20.5 14.5 21.3C14.8 21.8 19.1 28.8 28.7 35.5C29.3 35.9 30.3 35.5 30.9 34.9L34.1 31.5C35.2 30.3 37.1 30.1 38.5 30.9L46.3 35.6C47.7 36.5 48.4 38.2 47.8 39.8C46.4 43.7 43.9 46.3 40.7 47.3C39.8 47.7 38.4 48 36.6 48ZM15.5 34.8C28.4 47.4 37 46.5 40.1 45.5C43.3 44.5 45 41.5 45.9 39.2C46.1 38.5 45.9 37.8 45.3 37.4L37.5 32.7C36.9 32.3 36.1 32.4 35.6 32.9L32.4 36.3C31.2 37.5 29.2 38.2 27.6 37.1C18.4 30.7 13.5 23.7 12.7 22.1C12 20.5 12.4 18.7 13.6 17.5L17 14.3C17.5 13.8 17.6 13 17.3 12.4L12.6 4.60001C12.2 4.00001 11.5 3.70001 10.8 4.00001C8.49999 4.90001 5.49999 6.60001 4.49999 9.90001C3.49999 13 2.59999 21.7 15.4 34.7C15.4 34.7 15.4 34.7 15.5 34.8Z" fill="#231F20"></path>
+                            </svg>
+                        </a>
+                    {% endif %}
+                    {% if obj.contactEmail %}
+                        <a href="mailto:{{ obj.contactEmail }}" class="email">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.1 11.7C4.04229 11.7 4 11.7423 4 11.8V38.21C4 38.2677 4.04229 38.31 4.1 38.31H45.9C45.946 38.31 46 38.2696 46 38.2V11.8C46 11.7423 45.9577 11.7 45.9 11.7H4.1ZM2 11.8C2 10.6377 2.93771 9.70001 4.1 9.70001H45.9C47.0623 9.70001 48 10.6377 48 11.8V38.2C48 39.3505 47.074 40.31 45.9 40.31H4.1C2.93771 40.31 2 39.3723 2 38.21V11.8Z" fill="#231F20"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M23.6542 25.3302C23.9413 25.802 23.7916 26.4172 23.3198 26.7043L8.93976 35.4543C8.46795 35.7414 7.85275 35.5916 7.56567 35.1198C7.27858 34.648 7.42832 34.0328 7.90013 33.7457L22.2801 24.9957C22.7519 24.7086 23.3671 24.8584 23.6542 25.3302Z" fill="#231F20"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M26.3457 25.3302C26.6328 24.8584 27.248 24.7086 27.7198 24.9957L42.0998 33.7457C42.5716 34.0328 42.7213 34.648 42.4343 35.1198C42.1472 35.5916 41.532 35.7414 41.0602 35.4543L26.6802 26.7043C26.2084 26.4172 26.0586 25.802 26.3457 25.3302Z" fill="#231F20"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5657 16.5801C7.85281 16.1083 8.46802 15.9586 8.93981 16.2458L24.9999 26.0194L41.0601 16.2458C41.5319 15.9586 42.1471 16.1083 42.4342 16.5801C42.7213 17.0519 42.5716 17.6671 42.0998 17.9542L25.5198 28.0442C25.2005 28.2386 24.7994 28.2386 24.4801 28.0442L7.90008 17.9542C7.42829 17.6671 7.27858 17.0519 7.5657 16.5801Z" fill="#231F20"></path>
+                            </svg>
+                        </a>
+                    {% endif %}
+                    {% if obj.googleMapUrl %}
+                        <a href="{{ obj.googleMapUrl }}" class="fancymap location" target="_blank">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M24.9999 9.59C19.444 9.59 14.9399 14.094 14.9399 19.65C14.9399 25.206 19.444 29.71 24.9999 29.71C30.5559 29.71 35.0599 25.206 35.0599 19.65C35.0599 14.094 30.5559 9.59 24.9999 9.59ZM12.9399 19.65C12.9399 12.9894 18.3394 7.59 24.9999 7.59C31.6605 7.59 37.0599 12.9894 37.0599 19.65C37.0599 26.3106 31.6605 31.71 24.9999 31.71C18.3394 31.71 12.9399 26.3106 12.9399 19.65Z" fill="#231F20"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M25 4C16.3619 4 9.34998 11.0027 9.34998 19.65C9.34998 22.184 10.3121 25.1093 11.8436 28.1333C13.3672 31.1415 15.4097 34.1615 17.47 36.8622C19.5279 39.5597 21.5882 41.9188 23.1352 43.6043C23.9076 44.446 24.5508 45.1183 25 45.5793C25.4491 45.1183 26.0923 44.446 26.8648 43.6043C28.4117 41.9188 30.4721 39.5597 32.5299 36.8622C34.5903 34.1615 36.6328 31.1415 38.1563 28.1333C39.6879 25.1093 40.65 22.184 40.65 19.65C40.65 11.0027 33.6381 4 25 4ZM25 47C24.3004 47.7146 24.3002 47.7144 24.3 47.7142L24.2992 47.7134L24.2964 47.7107L24.2864 47.7008L24.2488 47.6637C24.216 47.6312 24.1679 47.5834 24.1055 47.521C23.9808 47.3961 23.799 47.2127 23.5683 46.9759C23.107 46.5024 22.4497 45.8152 21.6617 44.9566C20.0867 43.2406 17.9846 40.8341 15.8799 38.0753C13.7778 35.3197 11.6578 32.1929 10.0594 29.037C8.46912 25.897 7.34998 22.641 7.34998 19.65C7.34998 9.89732 15.2581 2 25 2C34.7419 2 42.65 9.89732 42.65 19.65C42.65 22.641 41.5308 25.897 39.9405 29.037C38.3422 32.1929 36.2222 35.3197 34.12 38.0753C32.0154 40.8341 29.9132 43.2406 28.3383 44.9566C27.5503 45.8152 26.893 46.5024 26.4317 46.9759C26.201 47.2127 26.0192 47.3961 25.8945 47.521C25.8321 47.5834 25.784 47.6312 25.7512 47.6637L25.7135 47.7008L25.7035 47.7107L25.7008 47.7134L25.7 47.7142C25.6997 47.7144 25.6995 47.7146 25 47ZM25 47L25.6995 47.7146C25.3108 48.0951 24.6892 48.0951 24.3004 47.7146L25 47Z" fill="#231F20"></path>
+                            </svg>
+                        </a>
+                    {% endif %}
                 </div>
-                <!--Grid row-->
-
-                <!--Grid row-->
-                <div class="row wow fadeIn">
-
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4">
-
-                        <!--Card-->
-                        <div class="card">
-
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13.jpg"
-                                     class="card-img-top"
-                                     alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-
-                            <!--Card content-->
-                            <div class="card-body text-center">
-                                <!--Category & Title-->
-                                <a href="" class="grey-text">
-                                    <h5>Shirt</h5>
-                                </a>
-                                <h5>
-                                    <strong>
-                                        <a href="" class="dark-grey-text">Denim shirt
-                                            <span class="badge badge-pill danger-color">NEW</span>
-                                        </a>
-                                    </strong>
-                                </h5>
-
-                                <h4 class="font-weight-bold blue-text">
-                                    <strong>120$</strong>
-                                </h4>
-
-                            </div>
-                            <!--Card content-->
-
-                        </div>
-                        <!--Card-->
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4">
-
-                        <!--Card-->
-                        <div class="card">
-
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg"
-                                     class="card-img-top"
-                                     alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-
-                            <!--Card content-->
-                            <div class="card-body text-center">
-                                <!--Category & Title-->
-                                <a href="" class="grey-text">
-                                    <h5>Sport wear</h5>
-                                </a>
-                                <h5>
-                                    <strong>
-                                        <a href="" class="dark-grey-text">Sweatshirt</a>
-                                    </strong>
-                                </h5>
-
-                                <h4 class="font-weight-bold blue-text">
-                                    <strong>139$</strong>
-                                </h4>
-
-                            </div>
-                            <!--Card content-->
-
-                        </div>
-                        <!--Card-->
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4">
-
-                        <!--Card-->
-                        <div class="card">
-
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15.jpg"
-                                     class="card-img-top"
-                                     alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-
-                            <!--Card content-->
-                            <div class="card-body text-center">
-                                <!--Category & Title-->
-                                <a href="" class="grey-text">
-                                    <h5>Sport wear</h5>
-                                </a>
-                                <h5>
-                                    <strong>
-                                        <a href="" class="dark-grey-text">Grey blouse
-                                            <span class="badge badge-pill primary-color">bestseller</span>
-                                        </a>
-                                    </strong>
-                                </h5>
-
-                                <h4 class="font-weight-bold blue-text">
-                                    <strong>99$</strong>
-                                </h4>
-
-                            </div>
-                            <!--Card content-->
-
-                        </div>
-                        <!--Card-->
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Fourth column-->
-                    <div class="col-lg-3 col-md-6 mb-4">
-
-                        <!--Card-->
-                        <div class="card">
-
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg"
-                                     class="card-img-top"
-                                     alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-
-                            <!--Card content-->
-                            <div class="card-body text-center">
-                                <!--Category & Title-->
-                                <a href="" class="grey-text">
-                                    <h5>Outwear</h5>
-                                </a>
-                                <h5>
-                                    <strong>
-                                        <a href="" class="dark-grey-text">Black jacket</a>
-                                    </strong>
-                                </h5>
-
-                                <h4 class="font-weight-bold blue-text">
-                                    <strong>219$</strong>
-                                </h4>
-
-                            </div>
-                            <!--Card content-->
-
-                        </div>
-                        <!--Card-->
-
-                    </div>
-                    <!--Fourth column-->
-
-                </div>
-                <!--Grid row-->
-
-            </section>
-            <!--Section: Products v.3-->
-
-            <!--Pagination-->
-            <nav class="d-flex justify-content-center wow fadeIn">
-                <ul class="pagination pg-blue">
-
-                    <!--Arrow left-->
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-
-                    <li class="page-item active">
-                        <a class="page-link" href="#">1
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">4</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">5</a>
-                    </li>
-
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <!--Pagination-->
-
+            </div>
         </div>
-    </main>
+    </div>
+<hr>
+    <section>
+        <div class="row d-flex justify-content-center wow fadeIn">
+            <div class="col-md-6 text-center">
+                <div class="container"><img src="{{ obj.textSideImg.url }}" style="height: auto; width: 500px"></div>
+
+            </div>
+            <div class="col-md-6 text-center">
+                <p style="display: block; font-size: 1.2rem; font-weight: 300; line-height: 1.5;"><strong>{{ obj.description }}</strong></p>
+            </div>
+        </div>
+    </section>
+<hr>
+    <section class="working-hour" style="background-image:url({{ obj.backgroundImgTime.url }}); background-repeat: no-repeat; background-size: cover;" >
+        <div class="container">
+            <div class="row">
+                <div class="content">
+                    <h1 class="section-title" style="color: #0f0f0f; display: block">Open Hours</h1>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="content">
+                    <h2 class="section-title" style="color: #0f0f0f; display: block">Lunch</h2>
+                    <h4 class="section-sub-title">{{ obj.lunchOpenHour }}</h4>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="content">
+                    <h2 class="section-title" style="color: #0f0f0f; display: block">Dinner</h2>
+                    <h4 class="section-sub-title">{{ obj.dinnerOpenHour }}</h4>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock content %}
