@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section>
+        <div class="container">
+            {%  for  menu_obj in menu %}
+                <hr class="mt-2 mb-5">
+                <div class="row text-center text-lg-left">
+                    <img src="{{ menu_obj.picture.url }}" class="img-fluid">
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock content %}
