@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+    {% if obj %}
     <style>
         .carousel-item .item {
             height: 500px;
@@ -18,7 +19,7 @@
         }
     </style>
 
-    <div id="carousel-example-1z" class="carousel slide carousel-fade pt-4" data-ride="carousel">
+    <div id="carousel-example-1z" class="carousel slide carousel-fade pt-4" data-ride="carousel" style="padding-top: 10%">
         <ol class="carousel-indicators">
         </ol>
         <div class="carousel-inner" role="listbox">
@@ -148,4 +149,7 @@
 
         </div>
     </section>
+    {% else %}
+        <h1> There is not Restaurant added ( or no active restaurant ) </h1>
+    {% endif %}
 {% endblock content %}

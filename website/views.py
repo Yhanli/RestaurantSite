@@ -7,10 +7,6 @@ from django.http import HttpResponse
 
 def main_page(request):
     activePage = MainPage.objects.get(is_active=True)
-
-    menu = MenuPictures.objects.filter(pageId=activePage.id)
-
-    print(menu)
     context = {
         'obj': activePage,
         'navbar':'home'
@@ -36,11 +32,11 @@ def gallary_view(request):
 
     activePage = MainPage.objects.get(is_active=True)
 
-    gallary = GallaryPictures.objects.filter(pageId=activePage.id)
+    gallery = GallaryPictures.objects.filter(pageId=activePage.id)
 
     context = {
         'obj': activePage,
-        'gallary': gallary,
-        'navbar':'gallary'
+        'gallery': gallery,
+        'navbar':'gallery'
     }
-    return render(request, "gallary.html", context)
+    return render(request, "gallery.html", context)

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section style="padding-top: 10%">
+        <div class="container" >
+            <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Food Gallery</h1>
+
+            <hr class="mt-2 mb-5">
+
+            <div class="row text-center text-lg-left">
+                {% if gallery %}
+                    {%  for image in gallery %}
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img class="img-fluid img-thumbnail" src="{{ image.picture.url }}" alt="">
+                            </a>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+
+        </div>
+    </section>
+{% endblock content %}
