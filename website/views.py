@@ -41,7 +41,6 @@ def gallary_view(request):
 
 
 def recordVisitor(request):
-
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:
         ip = x_forwarded_for.split(',')[0]
@@ -50,4 +49,8 @@ def recordVisitor(request):
     visitor = VisitorRecord()
     visitor.ip = ip
     visitor.visitedPage = request.META.get('PATH_INFO')
+    if request.META.get("USER"):
+        visitor.visitorName = request.META.get("USER")
+
+
     visitor.save()

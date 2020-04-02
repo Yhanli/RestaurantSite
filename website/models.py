@@ -40,3 +40,4 @@ class VisitorRecord(models.Model):
     ip = models.GenericIPAddressField()
     visitDateTime = models.DateTimeField(auto_now_add=True)
     visitedPage = models.CharField(max_length=100)
+    visitorName = models.CharField(max_length=120, blank=True, null=True)
