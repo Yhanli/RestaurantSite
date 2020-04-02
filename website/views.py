@@ -10,7 +10,7 @@ def main_page(request):
     activePage = MainPage.objects.get(is_active=True)
     context = {
         'obj': activePage,
-        'navbar':'home'
+        'navbar': 'home'
     }
     return render(request, "home-page.html", context)
 
@@ -22,7 +22,7 @@ def menu_page(request):
     context = {
         'obj': activePage,
         'menu': menu,
-        'navbar':'menu'
+        'navbar': 'menu'
     }
     return render(request, "menu.html", context)
     # return HttpResponse('<h1> testing menu</h1>')
@@ -35,12 +35,19 @@ def gallary_view(request):
     context = {
         'obj': activePage,
         'gallery': gallery,
-        'navbar':'gallery'
+        'navbar': 'gallery'
     }
     return render(request, "gallery.html", context)
 
+
 def recordVisitor(request):
+
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
     visitor = VisitorRecord()
-    visitor.ip = request.META.get('REMOTE_ADDR')
+    visitor.ip = ip
     visitor.visitedPage = request.META.get('PATH_INFO')
     visitor.save()
