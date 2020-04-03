@@ -5,22 +5,26 @@
 
     <!-- Social icons -->
     <div class="pb-4">
-        <a href="{{ obj.facebookLink }}" target="_blank">
-            <i class="fab fa-facebook-f mr-3"></i>
-        </a>
-
-        <a href="{{ obj.twitterLink }}" target="_blank">
-            <i class="fab fa-twitter mr-3"></i>
-        </a>
-
-        <a href="https://www.youtube.com/channel/UCfYF2TKjyD4AZbbG7EpXMhg" target="_blank">
-            <i class="fab fa-youtube mr-3"></i>
-        </a>
-
-        <a href="{{ obj.googleMapUrl }}" target="_blank">
-            <i class="fas fa-map-marker-alt"></i>
-        </a>
-
+        {% if obj.facebookLink %}
+            <a href="{{ obj.facebookLink }}" target="_blank">
+                <i class="fab fa-facebook-f mr-3"></i>
+            </a>
+        {% endif %}
+        {% if obj.twitterLink %}
+            <a href="{{ obj.twitterLink }}" target="_blank">
+                <i class="fab fa-twitter mr-3"></i>
+            </a>
+        {% endif %}
+        {% if obj.youtubeLink %}
+            <a href="{{ obj.youtubeLink }}" target="_blank">
+                <i class="fas fa-youtube mr-3"></i>
+            </a>
+        {% endif %}
+        {% if obj.googleMapUrl %}
+            <a href="{{ obj.googleMapUrl }}" target="_blank">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+        {% endif %}
     </div>
     <div class="pb-4">
         <p>Contact us on {% if obj.contactNumber %}Tel:

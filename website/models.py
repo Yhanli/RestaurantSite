@@ -17,6 +17,7 @@ class MainPage(models.Model):
     restaurantSubNameOrTheme = models.CharField(max_length=100)
     description = models.TextField(blank=False, null=False)
     facebookLink = models.URLField(blank=True, null=True)
+    youtubeLink = models.URLField(blank=True, null=True)
     twitterLink = models.URLField(blank=True, null=True)
     lunchOpenHour = models.TextField(blank=True)
     dinnerOpenHour = models.TextField(blank=True)
