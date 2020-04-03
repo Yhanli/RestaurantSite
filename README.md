@@ -1,5 +1,5 @@
 # Restaurant-Site
-Restaurant site build in Django framework.
+Restaurant site build in Django framework. With Admin control panel. 
 
 After clone, follow the steps below. 
 
@@ -38,4 +38,5 @@ To add superadmin:
 
 Create and complete a MainPage object in the admin page. tick is_active if you want show the page information.
 
+Visit http://preciousstone.top/ to see demo
 
