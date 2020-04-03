@@ -1,5 +1,5 @@
 # Restaurant-Site
-Restaurant site build in Django framework.
+Restaurant site build in Django framework. With Admin control panel. 
 
 After clone, follow the steps below. 
 
