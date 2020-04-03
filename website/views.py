@@ -6,13 +6,16 @@ from django.http import HttpResponse
 
 
 def main_page(request):
-    recordVisitor(request)
-    activePage = MainPage.objects.get(is_active=True)
-    context = {
-        'obj': activePage,
-        'navbar': 'home'
-    }
-    return render(request, "home-page.html", context)
+    try:
+        recordVisitor(request)
+        activePage = MainPage.objects.get(is_active=True)
+        context = {
+            'obj': activePage,
+            'navbar': 'home'
+        }
+        return render(request, "home-page.html", context)
+    except:
+        return HttpResponse('<h1> No active MainPage, add or change object in MainPage')
 
 
 def menu_page(request):
