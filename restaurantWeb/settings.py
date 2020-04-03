@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'hs9=i!f@v47c_@x=m#bl68kd_w#+p0jwh+-h=^$2eeiul6wphn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*','yhanl.tech', '35.189.16.33']
+ALLOWED_HOSTS = ['http://preciousstone.top/', '127.0.0.1']
 
 
 # Application definition
