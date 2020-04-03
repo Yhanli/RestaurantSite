@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'website'
+    'website',
+
+    'django_cleanup',
 ]
 
 MIDDLEWARE = [
