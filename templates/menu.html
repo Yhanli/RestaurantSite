@@ -1,16 +1,47 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            flex: 50%;
+            padding: 20px;
+        }
+
+        /* On screens that are 992px wide or less, go from four columns to two columns */
+        @media screen and (max-width: 1292px) {
+            .column {
+                flex: 50%;
+            }
+        }
+
+        /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+    </style>
     <section style="padding-top: 10%">
         <div class="container">
             {% if menu %}
                 {%  for  menu_obj in menu %}
                     <hr class="mt-2 mb-5">
-                        <div class="col-sm-10" style="margin-left: auto; margin-right: auto;">
+                    <div class="row" style="flex-wrap: wrap;display: flex;">
+                        <div class="column">
                             <a href="#" class="d-block mb-4 h-100">
-                                <img style="margin-left: auto; margin-right: auto;" src="{{ menu_obj.picture.url }}" class="img-fluid rounded">
+                                <img style="margin-left: auto; margin-right: auto; width: 100%; height: auto;" src="{{ menu_obj.picture.url }}" class="rounded">
                             </a>
                         </div>
+                        <div class="column">
+                            <a href="#" class="d-block mb-4 h-100">
+                                <img style="margin-left: auto; margin-right: auto; width: 100%; height: auto;" src="{{ menu_obj.picture.url }}" class="rounded">
+                            </a>
+                        </div>
+                    </div>
                 {% endfor %}
             {% endif %}
         </div>
