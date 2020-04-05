@@ -33,11 +33,17 @@
         <div class="container">
             {% if menu %}
                 <div class="row" style="flex-wrap: wrap;display: flex;">
+
                 {%  for  menu_obj in menu %}
-                        <div class="column">
+                        <div class="column fadeIn">
                             <img src="{{ menu_obj.picture.url }}" class="rounded menu-img">
                         </div>
                 {% endfor %}
+                {% if not menu|length|divisibleby:2 %}
+                    <div class="column fadeIn">
+                    </div>
+                {% endif %}
+
                 </div>
             {% endif %}
         </div>
