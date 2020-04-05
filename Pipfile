@@ -30,6 +30,7 @@ Django = "==2.2.10"
 Pillow = "==6.2.0"
 gunicorn = "*"
 django-cleanup = "*"
+django-thumbs-v2 = "*"
 
 [requires]
 python_version = "3.7"

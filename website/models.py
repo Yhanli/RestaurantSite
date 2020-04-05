@@ -37,20 +37,6 @@ class GallaryPictures(models.Model):
     picture = models.ImageField(upload_to="gallary/", blank=True)
     pageId = models.ForeignKey('MainPage', on_delete=models.CASCADE,)
 
-    def save(self, force_insert=False, force_update=False):
-
-        super(GallaryPictures, self).save(force_insert, force_update)
-
-        if self.id is not None:
-            previous = GallaryPictures.objects.get(id=self.id)
-            if self.picture and self.picture != previous.picture:
-                image = Image.open(self.picture.path)
-                # image = image.resize((96, 96), Image.ANTIALIAS)
-                # print(image.thumbnail())
-                image.thumbnail((96, 96))
-                image.save(self.picture.path)
-                print(image.format)
-
 class VisitorRecord(models.Model):
     ip = models.GenericIPAddressField()
     visitDateTime = models.DateTimeField(auto_now_add=True)
