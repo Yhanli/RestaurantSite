@@ -39,4 +39,4 @@ To add superadmin:
 Create and complete a MainPage object in the admin page. tick is_active if you want show the page information.
 
 Visit http://preciousstone.top/ to see demo
-
+http://preciousstone.top/admin , demo:testingpassword for accessing the managing site.
