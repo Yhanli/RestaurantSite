@@ -25,7 +25,7 @@ SECRET_KEY = 'hs9=i!f@v47c_@x=m#bl68kd_w#+p0jwh+-h=^$2eeiul6wphn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['preciousstone.top', '127.0.0.1']
+ALLOWED_HOSTS = ['*','preciousstone.top', '127.0.0.1']
 
 
 # Application definition
